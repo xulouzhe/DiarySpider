@@ -42,8 +42,8 @@ class Spider1Spider(scrapy.Spider):
             labels = content.xpath("./labels/text()").get()
             source = content.xpath("./source/text()").get()
             userid = content.xpath("./userid/text()").get()
-            # url = "http://www.nces.com.cn" + content.xpath("./staticfilename/text()").get()
-            url = "http://www.nces.com.cn/article/2012/05/13/1336905139975/"
+            url = "http://www.nces.com.cn" + content.xpath("./staticfilename/text()").get()
+            # url = "http://www.nces.com.cn/article/2012/05/13/1336905139975/"
             realname = content.xpath("./realname/text()").get()
             aliasname = content.xpath("./aliasname/text()").get()
 
