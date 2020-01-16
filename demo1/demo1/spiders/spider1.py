@@ -42,7 +42,8 @@ class Spider1Spider(scrapy.Spider):
             labels = content.xpath("./labels/text()").get()
             source = content.xpath("./source/text()").get()
             userid = content.xpath("./userid/text()").get()
-            url = "http://www.nces.com.cn" + content.xpath("./staticfilename/text()").get()
+            # url = "http://www.nces.com.cn" + content.xpath("./staticfilename/text()").get()
+            url = "http://www.nces.com.cn/article/2012/05/13/1336905139975/"
             realname = content.xpath("./realname/text()").get()
             aliasname = content.xpath("./aliasname/text()").get()
 
@@ -78,6 +79,12 @@ class Spider1Spider(scrapy.Spider):
         words = "".join(words).strip()
         words = re.sub(r"\s", "", words)
         words = re.sub(r"<.+?>", "", words)
+        if words == "":
+            words = response.xpath("//div[@class='connut']").getall()
+            words = "".join(words).strip()
+            words = re.sub(r"\s", "", words)
+            words = re.sub(r"<.+?>", "", words)
+
         item = response.meta["item"]
         item["words"] = words
         print(item)
