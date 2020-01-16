@@ -9,6 +9,16 @@ import scrapy
 
 
 class Demo1Item(scrapy.Item):
+
     # define the fields for your item here like:
     # name = scrapy.Field()
-    pass
+    title = scrapy.Field()
+    labels = scrapy.Field()
+    source = scrapy.Field()
+    userid = scrapy.Field()
+    url = scrapy.Field()
+    realname = scrapy.Field()
+    aliasname = scrapy.Field()
+
+    words = scrapy.Field()
+    createTime = scrapy.Field()
