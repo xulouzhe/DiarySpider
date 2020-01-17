@@ -2,7 +2,6 @@
 import scrapy
 
 import json
-import requests
 import re
 from demo1.items import Demo1Item
 
