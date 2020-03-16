@@ -1,2 +1,2 @@
-# scrapy1
+# DiarySpider
 To get articles from school website
